@@ -9,9 +9,11 @@
 |After the preprocessor.  |`clang -E`|
 |After syntax checking.| `clang -fsyntax-only`|
 | After LLVM IR code generation.| `clang -O0 -emit-llvm -S`|
-|After the middle-end optimizations<br />(pick the level you want)| `clang -O<1 or 2 or3 or s or z> -emit-llvm -S` |
+|After the middle-end optimizations<br />(pick the level you want)| `clang -O<1 or 2 or 3 or s or z> -emit-llvm -S` |
 |After assembly generation<br/>(i.e., see the extual representation of the assembly)| `clang -S`|
 |After the assembler<br />(i.e., see the object file representation)| `clang -c`|
+
+- https://clang.llvm.org/docs/ClangCommandLineReference.html
 
 # LLVM기초(Getting Started with the LLVM System)
 - https://llvm.org/docs/GettingStarted.html
