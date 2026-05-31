@@ -1,3 +1,5 @@
+; RUN: llc %s -o -
+; CHECK: define i32 @main(i32 %0, ptr %1) unnamed_addr #4 { 
 ; ModuleID = 'db4j352nh99q69c1r6t4b5pam'
 source_filename = "db4j352nh99q69c1r6t4b5pam"
 target datalayout = "e-m:o-p270:32:32-p271:32:32-p272:64:64-i64:64-i128:128-n32:64-S128-Fn32"
@@ -498,3 +500,4 @@ attributes #6 = { noinline }
 !292 = !DILocalVariable(arg: 1, scope: !287, file: !72, line: 2581, type: !7)
 !293 = !DILocation(line: 2581, column: 15, scope: !287)
 !294 = !DILocation(line: 2583, column: 6, scope: !287)
+

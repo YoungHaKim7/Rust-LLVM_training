@@ -5,6 +5,17 @@
 cargo rustc -- --emit llvm-ir=a01_hello_hello.ll
 ```
 
+# lit test
+
+```bash
+$ lit -sv a01_hello_hello.ll
+
+Testing Time: 0.14s
+
+Total Discovered Tests: 1
+  Passed: 1 (100.00%)
+```
+
 
 # `lit`
 - Looking at the errors, `lit` isn't finding any tests because your files aren't formatted as lit tests. Here's how to use lit:
