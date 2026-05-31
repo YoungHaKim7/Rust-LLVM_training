@@ -1,0 +1,28 @@
+; ModuleID = 'bof96wq68fwauc56kjzveabr2'
+source_filename = "bof96wq68fwauc56kjzveabr2"
+target datalayout = "e-m:o-p270:32:32-p271:32:32-p272:64:64-i64:64-i128:128-n32:64-S128-Fn32"
+target triple = "arm64-apple-macosx11.0.0"
+
+@alloc_3213114faf700a46436312d7d5d956d1 = private unnamed_addr constant [14 x i8] c"Hello, world!\0A", align 1
+
+; a02_file_check_llvm::main
+; Function Attrs: uwtable
+define hidden void @_ZN19a02_file_check_llvm4main17hb3360446edbd7c86E() unnamed_addr #0 !dbg !32 {
+start:
+; call core::fmt::Arguments::from_str
+  %0 = call { ptr, ptr } @_ZN4core3fmt9Arguments8from_str17heac2918414c2e0bdE(ptr align 1 @alloc_3213114faf700a46436312d7d5d956d1, i64 14) #5, !dbg !35
+  %_2.0 = extractvalue { ptr, ptr } %0, 0, !dbg !35
+  %_2.1 = extractvalue { ptr, ptr } %0, 1, !dbg !35
+; call std::io::stdio::_print
+  call void @_RNvNtNtCsg55jX0GwzBC_3std2io5stdio6__print(ptr %_2.0, ptr %_2.1), !dbg !35
+  ret void, !dbg !36
+}
+
+define i32 @main(i32 %0, ptr %1) unnamed_addr #4 {
+top:
+  %2 = sext i32 %0 to i64
+; call std::rt::lang_start
+  %3 = call i64 @_ZN3std2rt10lang_start17h7c22cc2a9679e6eeE(ptr @_ZN19a02_file_check_llvm4main17hb3360446edbd7c86E, i64 %2, ptr %1, i8 0)
+  %4 = trunc i64 %3 to i32
+  ret i32 %4
+}

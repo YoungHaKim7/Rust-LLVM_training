@@ -1,0 +1,23 @@
+; Check that the target triple is set correctly for Apple Silicon
+CHECK: target triple = "arm64-apple-macosx11.0.0"
+
+; Check that we have the Hello, world string constant
+CHECK: @alloc_{{[0-9a-f]+}} = private unnamed_addr constant [14 x i8] c"Hello, world!\0A"
+
+; Check that the main function is defined
+CHECK: define hidden void @_ZN19a02_file_check_llvm4main17h{{[0-9a-f]+}}E()
+
+; Check that main function calls Arguments::from_str
+CHECK: %0 = call { ptr, ptr } @_ZN4core3fmt9Arguments8from_str17h{{[0-9a-f]+}}E
+
+; Check that main function calls std::io::stdio::_print
+CHECK: call void @_RNvNtNtCsg55jX0GwzBC_3std2io5stdio6__print
+
+; Check that main function returns void
+CHECK: ret void
+
+; Check that the actual main entry point exists
+CHECK: define i32 @main(i32 %0, ptr %1)
+
+; Check that main calls lang_start
+CHECK: call i64 @_ZN3std2rt10lang_start17h{{[0-9a-f]+}}E

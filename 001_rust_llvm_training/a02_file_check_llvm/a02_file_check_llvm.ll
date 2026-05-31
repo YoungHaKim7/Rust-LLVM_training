@@ -1,0 +1,500 @@
+; ModuleID = 'bof96wq68fwauc56kjzveabr2'
+source_filename = "bof96wq68fwauc56kjzveabr2"
+target datalayout = "e-m:o-p270:32:32-p271:32:32-p272:64:64-i64:64-i128:128-n32:64-S128-Fn32"
+target triple = "arm64-apple-macosx11.0.0"
+
+@alloc_3213114faf700a46436312d7d5d956d1 = private unnamed_addr constant [14 x i8] c"Hello, world!\0A", align 1
+@vtable.0 = private constant <{ [24 x i8], ptr, ptr, ptr }> <{ [24 x i8] c"\00\00\00\00\00\00\00\00\08\00\00\00\00\00\00\00\08\00\00\00\00\00\00\00", ptr @"_ZN4core3ops8function6FnOnce40call_once$u7b$$u7b$vtable.shim$u7d$$u7d$17he54666aa5e689c33E", ptr @"_ZN3std2rt10lang_start28_$u7b$$u7b$closure$u7d$$u7d$17hf2d9420ffa0342e0E", ptr @"_ZN3std2rt10lang_start28_$u7b$$u7b$closure$u7d$$u7d$17hf2d9420ffa0342e0E" }>, align 8, !dbg !0
+
+; a02_file_check_llvm::main
+; Function Attrs: uwtable
+define hidden void @_ZN19a02_file_check_llvm4main17hb3360446edbd7c86E() unnamed_addr #0 !dbg !32 {
+start:
+; call core::fmt::Arguments::from_str
+  %0 = call { ptr, ptr } @_ZN4core3fmt9Arguments8from_str17heac2918414c2e0bdE(ptr align 1 @alloc_3213114faf700a46436312d7d5d956d1, i64 14) #5, !dbg !35
+  %_2.0 = extractvalue { ptr, ptr } %0, 0, !dbg !35
+  %_2.1 = extractvalue { ptr, ptr } %0, 1, !dbg !35
+; call std::io::stdio::_print
+  call void @_RNvNtNtCsg55jX0GwzBC_3std2io5stdio6__print(ptr %_2.0, ptr %_2.1), !dbg !35
+  ret void, !dbg !36
+}
+
+; std::rt::lang_start
+; Function Attrs: uwtable
+define hidden i64 @_ZN3std2rt10lang_start17h7c22cc2a9679e6eeE(ptr %main, i64 %argc, ptr %argv, i8 %sigpipe) unnamed_addr #0 !dbg !37 {
+start:
+  %sigpipe.dbg.spill = alloca [1 x i8], align 1
+  %argv.dbg.spill = alloca [8 x i8], align 8
+  %argc.dbg.spill = alloca [8 x i8], align 8
+  %main.dbg.spill = alloca [8 x i8], align 8
+  %_7 = alloca [8 x i8], align 8
+  store ptr %main, ptr %main.dbg.spill, align 8
+    #dbg_declare(ptr %main.dbg.spill, !46, !DIExpression(), !52)
+  store i64 %argc, ptr %argc.dbg.spill, align 8
+    #dbg_declare(ptr %argc.dbg.spill, !47, !DIExpression(), !53)
+  store ptr %argv, ptr %argv.dbg.spill, align 8
+    #dbg_declare(ptr %argv.dbg.spill, !48, !DIExpression(), !54)
+  store i8 %sigpipe, ptr %sigpipe.dbg.spill, align 1
+    #dbg_declare(ptr %sigpipe.dbg.spill, !49, !DIExpression(), !55)
+  store ptr %main, ptr %_7, align 8, !dbg !56
+; call std::rt::lang_start_internal
+  %_0 = call i64 @_RNvNtCsg55jX0GwzBC_3std2rt19lang_start_internal(ptr align 1 %_7, ptr align 8 @vtable.0, i64 %argc, ptr %argv, i8 %sigpipe), !dbg !57
+  ret i64 %_0, !dbg !58
+}
+
+; std::rt::lang_start::{{closure}}
+; Function Attrs: inlinehint uwtable
+define internal i32 @"_ZN3std2rt10lang_start28_$u7b$$u7b$closure$u7d$$u7d$17hf2d9420ffa0342e0E"(ptr align 8 %_1) unnamed_addr #1 !dbg !59 {
+start:
+  %self.dbg.spill = alloca [1 x i8], align 1
+  %_1.dbg.spill = alloca [8 x i8], align 8
+  store ptr %_1, ptr %_1.dbg.spill, align 8
+    #dbg_declare(ptr %_1.dbg.spill, !65, !DIExpression(DW_OP_deref), !66)
+  %_4 = load ptr, ptr %_1, align 8, !dbg !67
+; call std::sys::backtrace::__rust_begin_short_backtrace
+  call void @_ZN3std3sys9backtrace28__rust_begin_short_backtrace17h9977d68810e944c0E(ptr %_4) #6, !dbg !68
+; call <() as std::process::Termination>::report
+  %self = call i8 @"_ZN54_$LT$$LP$$RP$$u20$as$u20$std..process..Termination$GT$6report17h3d9c6878f6360bc6E"() #5, !dbg !69
+  store i8 %self, ptr %self.dbg.spill, align 1, !dbg !69
+    #dbg_declare(ptr %self.dbg.spill, !70, !DIExpression(), !88)
+  %_0 = zext i8 %self to i32, !dbg !90
+  ret i32 %_0, !dbg !98
+}
+
+; std::sys::backtrace::__rust_begin_short_backtrace
+; Function Attrs: noinline uwtable
+define internal void @_ZN3std3sys9backtrace28__rust_begin_short_backtrace17h9977d68810e944c0E(ptr %f) unnamed_addr #2 !dbg !99 {
+start:
+  %dummy.dbg.spill = alloca [0 x i8], align 1
+  %f.dbg.spill = alloca [8 x i8], align 8
+  %result.dbg.spill = alloca [0 x i8], align 1
+    #dbg_declare(ptr %result.dbg.spill, !106, !DIExpression(), !110)
+  store ptr %f, ptr %f.dbg.spill, align 8
+    #dbg_declare(ptr %f.dbg.spill, !105, !DIExpression(), !111)
+    #dbg_declare(ptr %dummy.dbg.spill, !112, !DIExpression(), !120)
+; call core::ops::function::FnOnce::call_once
+  call void @_ZN4core3ops8function6FnOnce9call_once17hdd4f438e0b8b8f5eE(ptr %f) #5, !dbg !122
+  call void asm sideeffect "", "~{memory}"(), !dbg !123, !srcloc !124
+  ret void, !dbg !125
+}
+
+; core::fmt::Arguments::from_str
+; Function Attrs: inlinehint uwtable
+define internal { ptr, ptr } @_ZN4core3fmt9Arguments8from_str17heac2918414c2e0bdE(ptr align 1 %s.0, i64 %s.1) unnamed_addr #1 !dbg !126 {
+start:
+  %s.dbg.spill = alloca [16 x i8], align 8
+  store ptr %s.0, ptr %s.dbg.spill, align 8
+  %0 = getelementptr inbounds i8, ptr %s.dbg.spill, i64 8
+  store i64 %s.1, ptr %0, align 8
+    #dbg_declare(ptr %s.dbg.spill, !225, !DIExpression(), !226)
+    #dbg_declare(ptr %s.dbg.spill, !227, !DIExpression(), !235)
+    #dbg_declare(ptr %s.dbg.spill, !237, !DIExpression(), !242)
+    #dbg_declare(ptr %s.dbg.spill, !244, !DIExpression(), !253)
+  %_6 = shl i64 %s.1, 1, !dbg !255
+  %_5 = or i64 %_6, 1, !dbg !255
+  %_4 = inttoptr i64 %_5 to ptr, !dbg !256
+  %1 = insertvalue { ptr, ptr } poison, ptr %s.0, 0, !dbg !257
+  %2 = insertvalue { ptr, ptr } %1, ptr %_4, 1, !dbg !257
+  ret { ptr, ptr } %2, !dbg !257
+}
+
+; core::ops::function::FnOnce::call_once{{vtable.shim}}
+; Function Attrs: inlinehint uwtable
+define internal i32 @"_ZN4core3ops8function6FnOnce40call_once$u7b$$u7b$vtable.shim$u7d$$u7d$17he54666aa5e689c33E"(ptr %_1) unnamed_addr #1 !dbg !258 {
+start:
+  %_1.dbg.spill = alloca [8 x i8], align 8
+  %_2 = alloca [0 x i8], align 1
+  store ptr %_1, ptr %_1.dbg.spill, align 8
+    #dbg_declare(ptr %_1.dbg.spill, !267, !DIExpression(), !272)
+    #dbg_declare(ptr %_2, !268, !DIExpression(), !272)
+  %0 = load ptr, ptr %_1, align 8, !dbg !272
+; call core::ops::function::FnOnce::call_once
+  %_0 = call i32 @_ZN4core3ops8function6FnOnce9call_once17hb040e1015821501eE(ptr %0) #5, !dbg !272
+  ret i32 %_0, !dbg !272
+}
+
+; core::ops::function::FnOnce::call_once
+; Function Attrs: inlinehint uwtable
+define internal i32 @_ZN4core3ops8function6FnOnce9call_once17hb040e1015821501eE(ptr %0) unnamed_addr #1 personality ptr @rust_eh_personality !dbg !273 {
+start:
+  %1 = alloca [16 x i8], align 8
+  %_2 = alloca [0 x i8], align 1
+  %_1 = alloca [8 x i8], align 8
+  store ptr %0, ptr %_1, align 8
+    #dbg_declare(ptr %_1, !277, !DIExpression(), !279)
+    #dbg_declare(ptr %_2, !278, !DIExpression(), !279)
+; invoke std::rt::lang_start::{{closure}}
+  %_0 = invoke i32 @"_ZN3std2rt10lang_start28_$u7b$$u7b$closure$u7d$$u7d$17hf2d9420ffa0342e0E"(ptr align 8 %_1)
+          to label %bb1 unwind label %cleanup, !dbg !279
+
+bb3:                                              ; preds = %cleanup
+  %2 = load ptr, ptr %1, align 8, !dbg !279
+  %3 = getelementptr inbounds i8, ptr %1, i64 8, !dbg !279
+  %4 = load i32, ptr %3, align 8, !dbg !279
+  %5 = insertvalue { ptr, i32 } poison, ptr %2, 0, !dbg !279
+  %6 = insertvalue { ptr, i32 } %5, i32 %4, 1, !dbg !279
+  resume { ptr, i32 } %6, !dbg !279
+
+cleanup:                                          ; preds = %start
+  %7 = landingpad { ptr, i32 }
+          cleanup
+  %8 = extractvalue { ptr, i32 } %7, 0
+  %9 = extractvalue { ptr, i32 } %7, 1
+  store ptr %8, ptr %1, align 8
+  %10 = getelementptr inbounds i8, ptr %1, i64 8
+  store i32 %9, ptr %10, align 8
+  br label %bb3
+
+bb1:                                              ; preds = %start
+  ret i32 %_0, !dbg !279
+}
+
+; core::ops::function::FnOnce::call_once
+; Function Attrs: inlinehint uwtable
+define internal void @_ZN4core3ops8function6FnOnce9call_once17hdd4f438e0b8b8f5eE(ptr %_1) unnamed_addr #1 !dbg !280 {
+start:
+  %_1.dbg.spill = alloca [8 x i8], align 8
+  %_2 = alloca [0 x i8], align 1
+  store ptr %_1, ptr %_1.dbg.spill, align 8
+    #dbg_declare(ptr %_1.dbg.spill, !282, !DIExpression(), !286)
+    #dbg_declare(ptr %_2, !283, !DIExpression(), !286)
+  call void %_1(), !dbg !286
+  ret void, !dbg !286
+}
+
+; <() as std::process::Termination>::report
+; Function Attrs: inlinehint uwtable
+define internal i8 @"_ZN54_$LT$$LP$$RP$$u20$as$u20$std..process..Termination$GT$6report17h3d9c6878f6360bc6E"() unnamed_addr #1 !dbg !287 {
+start:
+  %_1.dbg.spill = alloca [0 x i8], align 1
+    #dbg_declare(ptr %_1.dbg.spill, !292, !DIExpression(), !293)
+  ret i8 0, !dbg !294
+}
+
+; std::io::stdio::_print
+; Function Attrs: uwtable
+declare void @_RNvNtNtCsg55jX0GwzBC_3std2io5stdio6__print(ptr, ptr) unnamed_addr #0
+
+; std::rt::lang_start_internal
+; Function Attrs: uwtable
+declare i64 @_RNvNtCsg55jX0GwzBC_3std2rt19lang_start_internal(ptr align 1, ptr align 8, i64, ptr, i8) unnamed_addr #0
+
+; Function Attrs: nounwind uwtable
+declare i32 @rust_eh_personality(i32, i32, i64, ptr, ptr) unnamed_addr #3
+
+define i32 @main(i32 %0, ptr %1) unnamed_addr #4 {
+top:
+  %2 = sext i32 %0 to i64
+; call std::rt::lang_start
+  %3 = call i64 @_ZN3std2rt10lang_start17h7c22cc2a9679e6eeE(ptr @_ZN19a02_file_check_llvm4main17hb3360446edbd7c86E, i64 %2, ptr %1, i8 0)
+  %4 = trunc i64 %3 to i32
+  ret i32 %4
+}
+
+attributes #0 = { uwtable "frame-pointer"="non-leaf" "probe-stack"="inline-asm" "target-cpu"="apple-m1" }
+attributes #1 = { inlinehint uwtable "frame-pointer"="non-leaf" "probe-stack"="inline-asm" "target-cpu"="apple-m1" }
+attributes #2 = { noinline uwtable "frame-pointer"="non-leaf" "probe-stack"="inline-asm" "target-cpu"="apple-m1" }
+attributes #3 = { nounwind uwtable "frame-pointer"="non-leaf" "probe-stack"="inline-asm" "target-cpu"="apple-m1" }
+attributes #4 = { "frame-pointer"="non-leaf" "target-cpu"="apple-m1" }
+attributes #5 = { inlinehint }
+attributes #6 = { noinline }
+
+!llvm.module.flags = !{!24, !25, !26, !27}
+!llvm.ident = !{!28}
+!llvm.dbg.cu = !{!29}
+
+!0 = !DIGlobalVariableExpression(var: !1, expr: !DIExpression())
+!1 = distinct !DIGlobalVariable(name: "<std::rt::lang_start::{closure_env#0}<()> as core::ops::function::Fn<()>>::{vtable}", scope: null, file: !2, type: !3, isLocal: true, isDefinition: true)
+!2 = !DIFile(filename: "<unknown>", directory: "")
+!3 = !DICompositeType(tag: DW_TAG_structure_type, name: "<std::rt::lang_start::{closure_env#0}<()> as core::ops::function::Fn<()>>::{vtable_type}", file: !2, size: 384, align: 64, flags: DIFlagArtificial, elements: !4, vtableHolder: !14, templateParams: !23, identifier: "f34aa6cb86dd28769c324e855cb47161")
+!4 = !{!5, !8, !10, !11, !12, !13}
+!5 = !DIDerivedType(tag: DW_TAG_member, name: "drop_in_place", scope: !3, file: !2, baseType: !6, size: 64, align: 64)
+!6 = !DIDerivedType(tag: DW_TAG_pointer_type, name: "*const ()", baseType: !7, size: 64, align: 64, dwarfAddressSpace: 0)
+!7 = !DIBasicType(name: "()", encoding: DW_ATE_unsigned)
+!8 = !DIDerivedType(tag: DW_TAG_member, name: "size", scope: !3, file: !2, baseType: !9, size: 64, align: 64, offset: 64)
+!9 = !DIBasicType(name: "usize", size: 64, encoding: DW_ATE_unsigned)
+!10 = !DIDerivedType(tag: DW_TAG_member, name: "align", scope: !3, file: !2, baseType: !9, size: 64, align: 64, offset: 128)
+!11 = !DIDerivedType(tag: DW_TAG_member, name: "__method3", scope: !3, file: !2, baseType: !6, size: 64, align: 64, offset: 192)
+!12 = !DIDerivedType(tag: DW_TAG_member, name: "__method4", scope: !3, file: !2, baseType: !6, size: 64, align: 64, offset: 256)
+!13 = !DIDerivedType(tag: DW_TAG_member, name: "__method5", scope: !3, file: !2, baseType: !6, size: 64, align: 64, offset: 320)
+!14 = !DICompositeType(tag: DW_TAG_structure_type, name: "{closure_env#0}<()>", scope: !15, file: !2, size: 64, align: 64, elements: !18, templateParams: !23, identifier: "d047ece987088ea671f212f69027653f")
+!15 = !DINamespace(name: "lang_start", scope: !16)
+!16 = !DINamespace(name: "rt", scope: !17)
+!17 = !DINamespace(name: "std", scope: null)
+!18 = !{!19}
+!19 = !DIDerivedType(tag: DW_TAG_member, name: "main", scope: !14, file: !2, baseType: !20, size: 64, align: 64)
+!20 = !DIDerivedType(tag: DW_TAG_pointer_type, name: "fn()", baseType: !21, size: 64, align: 64, dwarfAddressSpace: 0)
+!21 = !DISubroutineType(types: !22)
+!22 = !{null}
+!23 = !{}
+!24 = !{i32 8, !"PIC Level", i32 2}
+!25 = !{i32 7, !"PIE Level", i32 2}
+!26 = !{i32 7, !"Dwarf Version", i32 4}
+!27 = !{i32 2, !"Debug Info Version", i32 3}
+!28 = !{!"rustc version 1.95.0 (59807616e 2026-04-14)"}
+!29 = distinct !DICompileUnit(language: DW_LANG_Rust, file: !30, producer: "clang LLVM (rustc version 1.95.0 (59807616e 2026-04-14))", isOptimized: false, runtimeVersion: 0, emissionKind: FullDebug, globals: !31, splitDebugInlining: false, nameTableKind: None)
+!30 = !DIFile(filename: "src/main.rs/@/bof96wq68fwauc56kjzveabr2", directory: "/Users/gy-gyoung/my_project/Rust_Lang/9999/Rust-LLVM_training/001_rust_llvm_training/a02_file_check_llvm")
+!31 = !{!0}
+!32 = distinct !DISubprogram(name: "main", linkageName: "_ZN19a02_file_check_llvm4main17hb3360446edbd7c86E", scope: !34, file: !33, line: 1, type: !21, scopeLine: 1, flags: DIFlagPrototyped, spFlags: DISPFlagLocalToUnit | DISPFlagDefinition | DISPFlagMainSubprogram, unit: !29, templateParams: !23)
+!33 = !DIFile(filename: "src/main.rs", directory: "/Users/gy-gyoung/my_project/Rust_Lang/9999/Rust-LLVM_training/001_rust_llvm_training/a02_file_check_llvm", checksumkind: CSK_MD5, checksum: "b64abcb167a8b9dd4f282813c31ad0da")
+!34 = !DINamespace(name: "a02_file_check_llvm", scope: null)
+!35 = !DILocation(line: 2, column: 5, scope: !32)
+!36 = !DILocation(line: 3, column: 2, scope: !32)
+!37 = distinct !DISubprogram(name: "lang_start<()>", linkageName: "_ZN3std2rt10lang_start17h7c22cc2a9679e6eeE", scope: !16, file: !38, line: 199, type: !39, scopeLine: 199, flags: DIFlagPrototyped, spFlags: DISPFlagLocalToUnit | DISPFlagDefinition, unit: !29, templateParams: !50, retainedNodes: !45)
+!38 = !DIFile(filename: "/Users/gy-gyoung/.rustup/toolchains/stable-aarch64-apple-darwin/lib/rustlib/src/rust/library/std/src/rt.rs", directory: "", checksumkind: CSK_MD5, checksum: "83eadca7bec2ebce94abb46f51902baa")
+!39 = !DISubroutineType(types: !40)
+!40 = !{!41, !20, !41, !42, !44}
+!41 = !DIBasicType(name: "isize", size: 64, encoding: DW_ATE_signed)
+!42 = !DIDerivedType(tag: DW_TAG_pointer_type, name: "*const *const u8", baseType: !43, size: 64, align: 64, dwarfAddressSpace: 0)
+!43 = !DIDerivedType(tag: DW_TAG_pointer_type, name: "*const u8", baseType: !44, size: 64, align: 64, dwarfAddressSpace: 0)
+!44 = !DIBasicType(name: "u8", size: 8, encoding: DW_ATE_unsigned)
+!45 = !{!46, !47, !48, !49}
+!46 = !DILocalVariable(name: "main", arg: 1, scope: !37, file: !38, line: 200, type: !20)
+!47 = !DILocalVariable(name: "argc", arg: 2, scope: !37, file: !38, line: 201, type: !41)
+!48 = !DILocalVariable(name: "argv", arg: 3, scope: !37, file: !38, line: 202, type: !42)
+!49 = !DILocalVariable(name: "sigpipe", arg: 4, scope: !37, file: !38, line: 203, type: !44)
+!50 = !{!51}
+!51 = !DITemplateTypeParameter(name: "T", type: !7)
+!52 = !DILocation(line: 200, column: 5, scope: !37)
+!53 = !DILocation(line: 201, column: 5, scope: !37)
+!54 = !DILocation(line: 202, column: 5, scope: !37)
+!55 = !DILocation(line: 203, column: 5, scope: !37)
+!56 = !DILocation(line: 206, column: 10, scope: !37)
+!57 = !DILocation(line: 205, column: 5, scope: !37)
+!58 = !DILocation(line: 211, column: 2, scope: !37)
+!59 = distinct !DISubprogram(name: "{closure#0}<()>", linkageName: "_ZN3std2rt10lang_start28_$u7b$$u7b$closure$u7d$$u7d$17hf2d9420ffa0342e0E", scope: !15, file: !38, line: 206, type: !60, scopeLine: 206, flags: DIFlagPrototyped, spFlags: DISPFlagLocalToUnit | DISPFlagDefinition, unit: !29, templateParams: !50, retainedNodes: !64)
+!60 = !DISubroutineType(types: !61)
+!61 = !{!62, !63}
+!62 = !DIBasicType(name: "i32", size: 32, encoding: DW_ATE_signed)
+!63 = !DIDerivedType(tag: DW_TAG_pointer_type, name: "&std::rt::lang_start::{closure_env#0}<()>", baseType: !14, size: 64, align: 64, dwarfAddressSpace: 0)
+!64 = !{!65}
+!65 = !DILocalVariable(name: "main", scope: !59, file: !38, line: 200, type: !20, align: 64)
+!66 = !DILocation(line: 200, column: 5, scope: !59)
+!67 = !DILocation(line: 206, column: 70, scope: !59)
+!68 = !DILocation(line: 206, column: 18, scope: !59)
+!69 = !DILocation(line: 206, column: 76, scope: !59)
+!70 = !DILocalVariable(name: "self", arg: 1, scope: !71, file: !72, line: 2183, type: !73)
+!71 = distinct !DISubprogram(name: "to_i32", linkageName: "_ZN3std7process8ExitCode6to_i3217h7aefdd0b37257f4fE", scope: !73, file: !72, line: 2183, type: !84, scopeLine: 2183, flags: DIFlagPrototyped, spFlags: DISPFlagLocalToUnit | DISPFlagDefinition, unit: !29, templateParams: !23, declaration: !86, retainedNodes: !87)
+!72 = !DIFile(filename: "/Users/gy-gyoung/.rustup/toolchains/stable-aarch64-apple-darwin/lib/rustlib/src/rust/library/std/src/process.rs", directory: "", checksumkind: CSK_MD5, checksum: "dfe9b5e7c082bd83c1ad09dca134fe2e")
+!73 = !DICompositeType(tag: DW_TAG_structure_type, name: "ExitCode", scope: !74, file: !2, size: 8, align: 8, flags: DIFlagPublic, elements: !75, templateParams: !23, identifier: "b9f70aac870c5df1e4b1b61ace950feb")
+!74 = !DINamespace(name: "process", scope: !17)
+!75 = !{!76}
+!76 = !DIDerivedType(tag: DW_TAG_member, name: "__0", scope: !73, file: !2, baseType: !77, size: 8, align: 8, flags: DIFlagPrivate)
+!77 = !DICompositeType(tag: DW_TAG_structure_type, name: "ExitCode", scope: !78, file: !2, size: 8, align: 8, flags: DIFlagPublic, elements: !82, templateParams: !23, identifier: "2dc1c4126679182ba0b04a72d1079eb2")
+!78 = !DINamespace(name: "common", scope: !79)
+!79 = !DINamespace(name: "unix", scope: !80)
+!80 = !DINamespace(name: "process", scope: !81)
+!81 = !DINamespace(name: "sys", scope: !17)
+!82 = !{!83}
+!83 = !DIDerivedType(tag: DW_TAG_member, name: "__0", scope: !77, file: !2, baseType: !44, size: 8, align: 8, flags: DIFlagPrivate)
+!84 = !DISubroutineType(types: !85)
+!85 = !{!62, !73}
+!86 = !DISubprogram(name: "to_i32", linkageName: "_ZN3std7process8ExitCode6to_i3217h7aefdd0b37257f4fE", scope: !73, file: !72, line: 2183, type: !84, scopeLine: 2183, flags: DIFlagPrototyped, spFlags: DISPFlagLocalToUnit, templateParams: !23)
+!87 = !{!70}
+!88 = !DILocation(line: 2183, column: 19, scope: !71, inlinedAt: !89)
+!89 = !DILocation(line: 206, column: 85, scope: !59)
+!90 = !DILocation(line: 588, column: 9, scope: !91, inlinedAt: !97)
+!91 = distinct !DISubprogram(name: "as_i32", linkageName: "_ZN3std3sys7process4unix6common8ExitCode6as_i3217h0f7ed9b557072e57E", scope: !77, file: !92, line: 587, type: !93, scopeLine: 587, flags: DIFlagPrototyped, spFlags: DISPFlagLocalToUnit | DISPFlagDefinition, unit: !29, templateParams: !23, declaration: !96)
+!92 = !DIFile(filename: "/Users/gy-gyoung/.rustup/toolchains/stable-aarch64-apple-darwin/lib/rustlib/src/rust/library/std/src/sys/process/unix/common.rs", directory: "", checksumkind: CSK_MD5, checksum: "30ad2f25ab170a75b6ebf3a9d367d220")
+!93 = !DISubroutineType(types: !94)
+!94 = !{!62, !95}
+!95 = !DIDerivedType(tag: DW_TAG_pointer_type, name: "&std::sys::process::unix::common::ExitCode", baseType: !77, size: 64, align: 64, dwarfAddressSpace: 0)
+!96 = !DISubprogram(name: "as_i32", linkageName: "_ZN3std3sys7process4unix6common8ExitCode6as_i3217h0f7ed9b557072e57E", scope: !77, file: !92, line: 587, type: !93, scopeLine: 587, flags: DIFlagPrototyped, spFlags: DISPFlagLocalToUnit, templateParams: !23)
+!97 = !DILocation(line: 2184, column: 16, scope: !71, inlinedAt: !89)
+!98 = !DILocation(line: 206, column: 93, scope: !59)
+!99 = distinct !DISubprogram(name: "__rust_begin_short_backtrace<fn(), ()>", linkageName: "_ZN3std3sys9backtrace28__rust_begin_short_backtrace17h9977d68810e944c0E", scope: !101, file: !100, line: 162, type: !102, scopeLine: 162, flags: DIFlagPrototyped, spFlags: DISPFlagLocalToUnit | DISPFlagDefinition, unit: !29, templateParams: !108, retainedNodes: !104)
+!100 = !DIFile(filename: "/Users/gy-gyoung/.rustup/toolchains/stable-aarch64-apple-darwin/lib/rustlib/src/rust/library/std/src/sys/backtrace.rs", directory: "", checksumkind: CSK_MD5, checksum: "0469076862be40bd9e65965440a24fae")
+!101 = !DINamespace(name: "backtrace", scope: !81)
+!102 = !DISubroutineType(types: !103)
+!103 = !{null, !20}
+!104 = !{!105, !106}
+!105 = !DILocalVariable(name: "f", arg: 1, scope: !99, file: !100, line: 162, type: !20)
+!106 = !DILocalVariable(name: "result", scope: !107, file: !100, line: 166, type: !7, align: 8)
+!107 = distinct !DILexicalBlock(scope: !99, file: !100, line: 166, column: 5)
+!108 = !{!109, !51}
+!109 = !DITemplateTypeParameter(name: "F", type: !20)
+!110 = !DILocation(line: 166, column: 9, scope: !107)
+!111 = !DILocation(line: 162, column: 43, scope: !99)
+!112 = !DILocalVariable(name: "dummy", scope: !113, file: !114, line: 490, type: !7, align: 8)
+!113 = distinct !DISubprogram(name: "black_box<()>", linkageName: "_ZN4core4hint9black_box17h67a9b3e84e904ce2E", scope: !115, file: !114, line: 490, type: !117, scopeLine: 490, flags: DIFlagPrototyped, spFlags: DISPFlagLocalToUnit | DISPFlagDefinition, unit: !29, templateParams: !50, retainedNodes: !119)
+!114 = !DIFile(filename: "/Users/gy-gyoung/.rustup/toolchains/stable-aarch64-apple-darwin/lib/rustlib/src/rust/library/core/src/hint.rs", directory: "", checksumkind: CSK_MD5, checksum: "2a901a283eb5f69871d8be07d256ca78")
+!115 = !DINamespace(name: "hint", scope: !116)
+!116 = !DINamespace(name: "core", scope: null)
+!117 = !DISubroutineType(types: !118)
+!118 = !{null, !7}
+!119 = !{!112}
+!120 = !DILocation(line: 490, column: 27, scope: !113, inlinedAt: !121)
+!121 = !DILocation(line: 169, column: 5, scope: !107)
+!122 = !DILocation(line: 166, column: 18, scope: !99)
+!123 = !DILocation(line: 491, column: 5, scope: !113, inlinedAt: !121)
+!124 = !{i64 5862209453609859}
+!125 = !DILocation(line: 172, column: 2, scope: !99)
+!126 = distinct !DISubprogram(name: "from_str", linkageName: "_ZN4core3fmt9Arguments8from_str17heac2918414c2e0bdE", scope: !128, file: !127, line: 815, type: !216, scopeLine: 815, flags: DIFlagPrototyped, spFlags: DISPFlagLocalToUnit | DISPFlagDefinition, unit: !29, templateParams: !23, declaration: !223, retainedNodes: !224)
+!127 = !DIFile(filename: "/Users/gy-gyoung/.rustup/toolchains/stable-aarch64-apple-darwin/lib/rustlib/src/rust/library/core/src/fmt/mod.rs", directory: "", checksumkind: CSK_MD5, checksum: "66c54229528687a22c80807f245fa4df")
+!128 = !DICompositeType(tag: DW_TAG_structure_type, name: "Arguments", scope: !129, file: !2, size: 128, align: 64, flags: DIFlagPublic, elements: !130, templateParams: !23, identifier: "41aa1e7c8e97d2dc649c4d47f82d56d")
+!129 = !DINamespace(name: "fmt", scope: !116)
+!130 = !{!131, !139}
+!131 = !DIDerivedType(tag: DW_TAG_member, name: "template", scope: !128, file: !2, baseType: !132, size: 64, align: 64, flags: DIFlagPrivate)
+!132 = !DICompositeType(tag: DW_TAG_structure_type, name: "NonNull<u8>", scope: !133, file: !2, size: 64, align: 64, flags: DIFlagPublic, elements: !135, templateParams: !137, identifier: "b2fa21d3bb8875c9d59d40469ed15451")
+!133 = !DINamespace(name: "non_null", scope: !134)
+!134 = !DINamespace(name: "ptr", scope: !116)
+!135 = !{!136}
+!136 = !DIDerivedType(tag: DW_TAG_member, name: "pointer", scope: !132, file: !2, baseType: !43, size: 64, align: 64, flags: DIFlagPrivate)
+!137 = !{!138}
+!138 = !DITemplateTypeParameter(name: "T", type: !44)
+!139 = !DIDerivedType(tag: DW_TAG_member, name: "args", scope: !128, file: !2, baseType: !140, size: 64, align: 64, offset: 64, flags: DIFlagPrivate)
+!140 = !DICompositeType(tag: DW_TAG_structure_type, name: "NonNull<core::fmt::rt::Argument>", scope: !133, file: !2, size: 64, align: 64, flags: DIFlagPublic, elements: !141, templateParams: !214, identifier: "9b658aff9ce188e99ca40f6ee7c490e0")
+!141 = !{!142}
+!142 = !DIDerivedType(tag: DW_TAG_member, name: "pointer", scope: !140, file: !2, baseType: !143, size: 64, align: 64, flags: DIFlagPrivate)
+!143 = !DIDerivedType(tag: DW_TAG_pointer_type, name: "*const core::fmt::rt::Argument", baseType: !144, size: 64, align: 64, dwarfAddressSpace: 0)
+!144 = !DICompositeType(tag: DW_TAG_structure_type, name: "Argument", scope: !145, file: !2, size: 128, align: 64, flags: DIFlagPublic, elements: !146, templateParams: !23, identifier: "c87f3f618b15e5ee50098f43979a8995")
+!145 = !DINamespace(name: "rt", scope: !129)
+!146 = !{!147}
+!147 = !DIDerivedType(tag: DW_TAG_member, name: "ty", scope: !144, file: !2, baseType: !148, size: 128, align: 64, flags: DIFlagPrivate)
+!148 = !DICompositeType(tag: DW_TAG_structure_type, name: "ArgumentType", scope: !145, file: !2, size: 128, align: 64, flags: DIFlagPrivate, elements: !149, templateParams: !23, identifier: "a6972358e214240f6a9838298edbe813")
+!149 = !{!150}
+!150 = !DICompositeType(tag: DW_TAG_variant_part, scope: !148, file: !2, size: 128, align: 64, elements: !151, templateParams: !23, identifier: "b6e4def582077467047284c23016cb0", discriminator: !212)
+!151 = !{!152, !208}
+!152 = !DIDerivedType(tag: DW_TAG_member, name: "Placeholder", scope: !150, file: !2, baseType: !153, size: 128, align: 64)
+!153 = !DICompositeType(tag: DW_TAG_structure_type, name: "Placeholder", scope: !148, file: !2, size: 128, align: 64, flags: DIFlagPrivate, elements: !154, templateParams: !23, identifier: "9e75a27e2b92a65197690b757441e132")
+!154 = !{!155, !159, !202}
+!155 = !DIDerivedType(tag: DW_TAG_member, name: "value", scope: !153, file: !2, baseType: !156, size: 64, align: 64, flags: DIFlagPrivate)
+!156 = !DICompositeType(tag: DW_TAG_structure_type, name: "NonNull<()>", scope: !133, file: !2, size: 64, align: 64, flags: DIFlagPublic, elements: !157, templateParams: !50, identifier: "d80c6648e72e38b2a6ed0b7844a217e3")
+!157 = !{!158}
+!158 = !DIDerivedType(tag: DW_TAG_member, name: "pointer", scope: !156, file: !2, baseType: !6, size: 64, align: 64, flags: DIFlagPrivate)
+!159 = !DIDerivedType(tag: DW_TAG_member, name: "formatter", scope: !153, file: !2, baseType: !160, size: 64, align: 64, offset: 64, flags: DIFlagPrivate)
+!160 = !DIDerivedType(tag: DW_TAG_pointer_type, name: "unsafe fn(core::ptr::non_null::NonNull<()>, &mut core::fmt::Formatter) -> core::result::Result<(), core::fmt::Error>", baseType: !161, size: 64, align: 64, dwarfAddressSpace: 0)
+!161 = !DISubroutineType(types: !162)
+!162 = !{!163, !156, !180}
+!163 = !DICompositeType(tag: DW_TAG_structure_type, name: "Result<(), core::fmt::Error>", scope: !164, file: !2, size: 8, align: 8, flags: DIFlagPublic, elements: !165, templateParams: !23, identifier: "1dcbe81c64589841b8a2a4153cc1079c")
+!164 = !DINamespace(name: "result", scope: !116)
+!165 = !{!166}
+!166 = !DICompositeType(tag: DW_TAG_variant_part, scope: !163, file: !2, size: 8, align: 8, elements: !167, templateParams: !23, identifier: "ce552834d02475ffb2c5873046b953da", discriminator: !179)
+!167 = !{!168, !175}
+!168 = !DIDerivedType(tag: DW_TAG_member, name: "Ok", scope: !166, file: !2, baseType: !169, size: 8, align: 8, extraData: i8 0)
+!169 = !DICompositeType(tag: DW_TAG_structure_type, name: "Ok", scope: !163, file: !2, size: 8, align: 8, flags: DIFlagPublic, elements: !170, templateParams: !172, identifier: "ce599fc913121d24f2b76cef3be7bf36")
+!170 = !{!171}
+!171 = !DIDerivedType(tag: DW_TAG_member, name: "__0", scope: !169, file: !2, baseType: !7, align: 8, offset: 8, flags: DIFlagPublic)
+!172 = !{!51, !173}
+!173 = !DITemplateTypeParameter(name: "E", type: !174)
+!174 = !DICompositeType(tag: DW_TAG_structure_type, name: "Error", scope: !129, file: !2, align: 8, flags: DIFlagPublic, elements: !23, identifier: "955186125d088689d8e3ee1869cf863")
+!175 = !DIDerivedType(tag: DW_TAG_member, name: "Err", scope: !166, file: !2, baseType: !176, size: 8, align: 8, extraData: i8 1)
+!176 = !DICompositeType(tag: DW_TAG_structure_type, name: "Err", scope: !163, file: !2, size: 8, align: 8, flags: DIFlagPublic, elements: !177, templateParams: !172, identifier: "12828519617ecf3a8cca403d76302ac5")
+!177 = !{!178}
+!178 = !DIDerivedType(tag: DW_TAG_member, name: "__0", scope: !176, file: !2, baseType: !174, align: 8, offset: 8, flags: DIFlagPublic)
+!179 = !DIDerivedType(tag: DW_TAG_member, scope: !163, file: !2, baseType: !44, size: 8, align: 8, flags: DIFlagArtificial)
+!180 = !DIDerivedType(tag: DW_TAG_pointer_type, name: "&mut core::fmt::Formatter", baseType: !181, size: 64, align: 64, dwarfAddressSpace: 0)
+!181 = !DICompositeType(tag: DW_TAG_structure_type, name: "Formatter", scope: !129, file: !2, size: 192, align: 64, flags: DIFlagPublic, elements: !182, templateParams: !23, identifier: "ef052e0c4b2f11b555a896d43caebd6f")
+!182 = !{!183, !191}
+!183 = !DIDerivedType(tag: DW_TAG_member, name: "options", scope: !181, file: !2, baseType: !184, size: 64, align: 32, offset: 128, flags: DIFlagPrivate)
+!184 = !DICompositeType(tag: DW_TAG_structure_type, name: "FormattingOptions", scope: !129, file: !2, size: 64, align: 32, flags: DIFlagPublic, elements: !185, templateParams: !23, identifier: "3e5fbcac7fdd318f4b339200b5334e97")
+!185 = !{!186, !188, !190}
+!186 = !DIDerivedType(tag: DW_TAG_member, name: "flags", scope: !184, file: !2, baseType: !187, size: 32, align: 32, flags: DIFlagPrivate)
+!187 = !DIBasicType(name: "u32", size: 32, encoding: DW_ATE_unsigned)
+!188 = !DIDerivedType(tag: DW_TAG_member, name: "width", scope: !184, file: !2, baseType: !189, size: 16, align: 16, offset: 32, flags: DIFlagPrivate)
+!189 = !DIBasicType(name: "u16", size: 16, encoding: DW_ATE_unsigned)
+!190 = !DIDerivedType(tag: DW_TAG_member, name: "precision", scope: !184, file: !2, baseType: !189, size: 16, align: 16, offset: 48, flags: DIFlagPrivate)
+!191 = !DIDerivedType(tag: DW_TAG_member, name: "buf", scope: !181, file: !2, baseType: !192, size: 128, align: 64, flags: DIFlagPrivate)
+!192 = !DICompositeType(tag: DW_TAG_structure_type, name: "&mut dyn core::fmt::Write", file: !2, size: 128, align: 64, elements: !193, templateParams: !23, identifier: "d02bdfad913403de2220be802c4ae507")
+!193 = !{!194, !197}
+!194 = !DIDerivedType(tag: DW_TAG_member, name: "pointer", scope: !192, file: !2, baseType: !195, size: 64, align: 64)
+!195 = !DIDerivedType(tag: DW_TAG_pointer_type, baseType: !196, size: 64, align: 64, dwarfAddressSpace: 0)
+!196 = !DICompositeType(tag: DW_TAG_structure_type, name: "dyn core::fmt::Write", file: !2, align: 8, elements: !23, identifier: "db4b96b82c3ffe41a24e7f14592e7672")
+!197 = !DIDerivedType(tag: DW_TAG_member, name: "vtable", scope: !192, file: !2, baseType: !198, size: 64, align: 64, offset: 64)
+!198 = !DIDerivedType(tag: DW_TAG_pointer_type, name: "&[usize; 6]", baseType: !199, size: 64, align: 64, dwarfAddressSpace: 0)
+!199 = !DICompositeType(tag: DW_TAG_array_type, baseType: !9, size: 384, align: 64, elements: !200)
+!200 = !{!201}
+!201 = !DISubrange(count: 6, lowerBound: 0)
+!202 = !DIDerivedType(tag: DW_TAG_member, name: "_lifetime", scope: !153, file: !2, baseType: !203, align: 8, offset: 128, flags: DIFlagPrivate)
+!203 = !DICompositeType(tag: DW_TAG_structure_type, name: "PhantomData<&()>", scope: !204, file: !2, align: 8, flags: DIFlagPublic, elements: !23, templateParams: !205, identifier: "d75af431861e26719f6587ef1e8efef")
+!204 = !DINamespace(name: "marker", scope: !116)
+!205 = !{!206}
+!206 = !DITemplateTypeParameter(name: "T", type: !207)
+!207 = !DIDerivedType(tag: DW_TAG_pointer_type, name: "&()", baseType: !7, size: 64, align: 64, dwarfAddressSpace: 0)
+!208 = !DIDerivedType(tag: DW_TAG_member, name: "Count", scope: !150, file: !2, baseType: !209, size: 128, align: 64, extraData: i64 0)
+!209 = !DICompositeType(tag: DW_TAG_structure_type, name: "Count", scope: !148, file: !2, size: 128, align: 64, flags: DIFlagPrivate, elements: !210, templateParams: !23, identifier: "dfec55962642c166f88656e3356de71")
+!210 = !{!211}
+!211 = !DIDerivedType(tag: DW_TAG_member, name: "__0", scope: !209, file: !2, baseType: !189, size: 16, align: 16, offset: 64, flags: DIFlagPrivate)
+!212 = !DIDerivedType(tag: DW_TAG_member, scope: !148, file: !2, baseType: !213, size: 64, align: 64, flags: DIFlagArtificial)
+!213 = !DIBasicType(name: "u64", size: 64, encoding: DW_ATE_unsigned)
+!214 = !{!215}
+!215 = !DITemplateTypeParameter(name: "T", type: !144)
+!216 = !DISubroutineType(types: !217)
+!217 = !{!128, !218}
+!218 = !DICompositeType(tag: DW_TAG_structure_type, name: "&str", file: !2, size: 128, align: 64, elements: !219, templateParams: !23, identifier: "9277eecd40495f85161460476aacc992")
+!219 = !{!220, !222}
+!220 = !DIDerivedType(tag: DW_TAG_member, name: "data_ptr", scope: !218, file: !2, baseType: !221, size: 64, align: 64)
+!221 = !DIDerivedType(tag: DW_TAG_pointer_type, baseType: !44, size: 64, align: 64, dwarfAddressSpace: 0)
+!222 = !DIDerivedType(tag: DW_TAG_member, name: "length", scope: !218, file: !2, baseType: !9, size: 64, align: 64, offset: 64)
+!223 = !DISubprogram(name: "from_str", linkageName: "_ZN4core3fmt9Arguments8from_str17heac2918414c2e0bdE", scope: !128, file: !127, line: 815, type: !216, scopeLine: 815, flags: DIFlagPrototyped, spFlags: DISPFlagLocalToUnit, templateParams: !23)
+!224 = !{!225}
+!225 = !DILocalVariable(name: "s", arg: 1, scope: !126, file: !127, line: 815, type: !218)
+!226 = !DILocation(line: 815, column: 27, scope: !126)
+!227 = !DILocalVariable(name: "self", arg: 1, scope: !228, file: !229, line: 578, type: !218)
+!228 = distinct !DISubprogram(name: "as_ptr", linkageName: "_RNvMNtCsl8K0bEFm1U0_4core3stre6as_ptr", scope: !230, file: !229, line: 578, type: !232, scopeLine: 578, flags: DIFlagPrototyped, spFlags: DISPFlagLocalToUnit | DISPFlagDefinition, unit: !29, templateParams: !23, retainedNodes: !234)
+!229 = !DIFile(filename: "/Users/gy-gyoung/.rustup/toolchains/stable-aarch64-apple-darwin/lib/rustlib/src/rust/library/core/src/str/mod.rs", directory: "", checksumkind: CSK_MD5, checksum: "b67baab1b9aefdbe1feb84767953c83d")
+!230 = !DINamespace(name: "{impl#0}", scope: !231)
+!231 = !DINamespace(name: "str", scope: !116)
+!232 = !DISubroutineType(types: !233)
+!233 = !{!43, !218}
+!234 = !{!227}
+!235 = !DILocation(line: 578, column: 25, scope: !228, inlinedAt: !236)
+!236 = !DILocation(line: 819, column: 44, scope: !126)
+!237 = !DILocalVariable(name: "self", arg: 1, scope: !238, file: !229, line: 157, type: !218)
+!238 = distinct !DISubprogram(name: "len", linkageName: "_ZN4core3str21_$LT$impl$u20$str$GT$3len17h5b7e85e3c89df04aE", scope: !230, file: !229, line: 157, type: !239, scopeLine: 157, flags: DIFlagPrototyped, spFlags: DISPFlagLocalToUnit | DISPFlagDefinition, unit: !29, templateParams: !23, retainedNodes: !241)
+!239 = !DISubroutineType(types: !240)
+!240 = !{!9, !218}
+!241 = !{!237}
+!242 = !DILocation(line: 157, column: 22, scope: !238, inlinedAt: !243)
+!243 = !DILocation(line: 820, column: 40, scope: !126)
+!244 = !DILocalVariable(name: "self", arg: 1, scope: !245, file: !229, line: 502, type: !218)
+!245 = distinct !DISubprogram(name: "as_bytes", linkageName: "_RNvMNtCsl8K0bEFm1U0_4core3stre8as_bytes", scope: !230, file: !229, line: 502, type: !246, scopeLine: 502, flags: DIFlagPrototyped, spFlags: DISPFlagLocalToUnit | DISPFlagDefinition, unit: !29, templateParams: !23, retainedNodes: !252)
+!246 = !DISubroutineType(types: !247)
+!247 = !{!248, !218}
+!248 = !DICompositeType(tag: DW_TAG_structure_type, name: "&[u8]", file: !2, size: 128, align: 64, elements: !249, templateParams: !23, identifier: "31681e0c10b314f1f33e38b2779acbb4")
+!249 = !{!250, !251}
+!250 = !DIDerivedType(tag: DW_TAG_member, name: "data_ptr", scope: !248, file: !2, baseType: !221, size: 64, align: 64)
+!251 = !DIDerivedType(tag: DW_TAG_member, name: "length", scope: !248, file: !2, baseType: !9, size: 64, align: 64, offset: 64)
+!252 = !{!244}
+!253 = !DILocation(line: 502, column: 27, scope: !245, inlinedAt: !254)
+!254 = !DILocation(line: 158, column: 14, scope: !238, inlinedAt: !243)
+!255 = !DILocation(line: 820, column: 38, scope: !126)
+!256 = !DILocation(line: 820, column: 23, scope: !126)
+!257 = !DILocation(line: 823, column: 6, scope: !126)
+!258 = distinct !DISubprogram(name: "call_once<std::rt::lang_start::{closure_env#0}<()>, ()>", linkageName: "_ZN4core3ops8function6FnOnce40call_once$u7b$$u7b$vtable.shim$u7d$$u7d$17he54666aa5e689c33E", scope: !260, file: !259, line: 250, type: !263, scopeLine: 250, flags: DIFlagPrototyped, spFlags: DISPFlagLocalToUnit | DISPFlagDefinition, unit: !29, templateParams: !269, retainedNodes: !266)
+!259 = !DIFile(filename: "/Users/gy-gyoung/.rustup/toolchains/stable-aarch64-apple-darwin/lib/rustlib/src/rust/library/core/src/ops/function.rs", directory: "", checksumkind: CSK_MD5, checksum: "7165aec212fc528edf645f7f5c1c91bb")
+!260 = !DINamespace(name: "FnOnce", scope: !261)
+!261 = !DINamespace(name: "function", scope: !262)
+!262 = !DINamespace(name: "ops", scope: !116)
+!263 = !DISubroutineType(types: !264)
+!264 = !{!62, !265}
+!265 = !DIDerivedType(tag: DW_TAG_pointer_type, name: "*mut std::rt::lang_start::{closure_env#0}<()>", baseType: !14, size: 64, align: 64, dwarfAddressSpace: 0)
+!266 = !{!267, !268}
+!267 = !DILocalVariable(arg: 1, scope: !258, file: !259, line: 250, type: !265)
+!268 = !DILocalVariable(arg: 2, scope: !258, file: !259, line: 250, type: !7)
+!269 = !{!270, !271}
+!270 = !DITemplateTypeParameter(name: "Self", type: !14)
+!271 = !DITemplateTypeParameter(name: "Args", type: !7)
+!272 = !DILocation(line: 250, column: 5, scope: !258)
+!273 = distinct !DISubprogram(name: "call_once<std::rt::lang_start::{closure_env#0}<()>, ()>", linkageName: "_ZN4core3ops8function6FnOnce9call_once17hb040e1015821501eE", scope: !260, file: !259, line: 250, type: !274, scopeLine: 250, flags: DIFlagPrototyped, spFlags: DISPFlagLocalToUnit | DISPFlagDefinition, unit: !29, templateParams: !269, retainedNodes: !276)
+!274 = !DISubroutineType(types: !275)
+!275 = !{!62, !14}
+!276 = !{!277, !278}
+!277 = !DILocalVariable(arg: 1, scope: !273, file: !259, line: 250, type: !14)
+!278 = !DILocalVariable(arg: 2, scope: !273, file: !259, line: 250, type: !7)
+!279 = !DILocation(line: 250, column: 5, scope: !273)
+!280 = distinct !DISubprogram(name: "call_once<fn(), ()>", linkageName: "_ZN4core3ops8function6FnOnce9call_once17hdd4f438e0b8b8f5eE", scope: !260, file: !259, line: 250, type: !102, scopeLine: 250, flags: DIFlagPrototyped, spFlags: DISPFlagLocalToUnit | DISPFlagDefinition, unit: !29, templateParams: !284, retainedNodes: !281)
+!281 = !{!282, !283}
+!282 = !DILocalVariable(arg: 1, scope: !280, file: !259, line: 250, type: !20)
+!283 = !DILocalVariable(arg: 2, scope: !280, file: !259, line: 250, type: !7)
+!284 = !{!285, !271}
+!285 = !DITemplateTypeParameter(name: "Self", type: !20)
+!286 = !DILocation(line: 250, column: 5, scope: !280)
+!287 = distinct !DISubprogram(name: "report", linkageName: "_ZN54_$LT$$LP$$RP$$u20$as$u20$std..process..Termination$GT$6report17h3d9c6878f6360bc6E", scope: !288, file: !72, line: 2581, type: !289, scopeLine: 2581, flags: DIFlagPrototyped, spFlags: DISPFlagLocalToUnit | DISPFlagDefinition, unit: !29, templateParams: !23, retainedNodes: !291)
+!288 = !DINamespace(name: "{impl#63}", scope: !74)
+!289 = !DISubroutineType(types: !290)
+!290 = !{!73, !7}
+!291 = !{!292}
+!292 = !DILocalVariable(arg: 1, scope: !287, file: !72, line: 2581, type: !7)
+!293 = !DILocation(line: 2581, column: 15, scope: !287)
+!294 = !DILocation(line: 2583, column: 6, scope: !287)
