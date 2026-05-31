@@ -45,6 +45,9 @@ cmake -DCMAKE_C_COMPILER=<path to llvm build>/bin/clang \
 ### 3. Build
 ```bash
 make
+
+# 병렬로 빠르게 빌드하기
+make -j$(nproc)
 ```
 
 ### 4. Run Tests
