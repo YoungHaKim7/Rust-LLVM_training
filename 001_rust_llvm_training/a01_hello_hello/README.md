@@ -16,6 +16,26 @@ Total Discovered Tests: 1
   Passed: 1 (100.00%)
 ```
 
+- Rust lit on the directory
+
+```bash
+$ lit .
+
+-- Testing: 2 tests, 2 workers --
+UNRESOLVED: a01_hello_hello :: target/debug/incremental/a01_hello_hello-1eag4bkx6zfpi/s-hj1d89owrt-02yf2zs-ddvkn1k5jzzo68jkq6y61fgzj/db4j352nh99q69c1r6t4b5pam.ll (1 of 2)
+PASS: a01_hello_hello :: a01_hello_hello.ll (2 of 2)
+********************
+Unresolved Tests (1):
+  a01_hello_hello :: target/debug/incremental/a01_hello_hello-1eag4bkx6zfpi/s-hj1d89owrt-02yf2zs-ddvkn1k5jzzo68jkq6y61fgzj/db4j352nh99q69c1r6t4b5pam.ll
+
+
+Testing Time: 0.13s
+
+Total Discovered Tests: 2
+  Passed    : 1 (50.00%)
+  Unresolved: 1 (50.00%)
+```
+
 
 # `lit`
 - Looking at the errors, `lit` isn't finding any tests because your files aren't formatted as lit tests. Here's how to use lit:
