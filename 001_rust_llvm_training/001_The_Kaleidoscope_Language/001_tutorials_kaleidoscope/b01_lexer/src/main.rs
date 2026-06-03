@@ -153,22 +153,20 @@ fn main() {
         io::stdout().flush().unwrap();
 
         match lexer.gettok() {
-            Ok(token) => {
-                match token {
-                    Token::Def => println!("Token: Def"),
-                    Token::Extern => println!("Token: Extern"),
-                    Token::Identifier(_name) => {
-                        println!("Token: Identifier({})", lexer.get_identifier_str());
-                    }
-                    Token::Number(_num) => {
-                        println!("Token: Number({})", lexer.get_num_val());
-                    }
-                    Token::Eof => {
-                        println!("Token: Eof");
-                        break;
-                    }
+            Ok(token) => match token {
+                Token::Def => println!("Token: Def"),
+                Token::Extern => println!("Token: Extern"),
+                Token::Identifier(_name) => {
+                    println!("Token: Identifier({})", lexer.get_identifier_str());
                 }
-            }
+                Token::Number(_num) => {
+                    println!("Token: Number({})", lexer.get_num_val());
+                }
+                Token::Eof => {
+                    println!("Token: Eof");
+                    break;
+                }
+            },
             Err(ascii_val) => {
                 if ascii_val == 4 {
                     // Ctrl+D
