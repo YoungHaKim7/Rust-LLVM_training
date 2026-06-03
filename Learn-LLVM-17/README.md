@@ -1,6 +1,12 @@
 # Learn LLVM 17
 - https://github.com/PacktPublishing/Learn-LLVM-17
 
+# LLVM
+- https://github.com/llvm/llvm-project
+
+## llvm여기구만..
+- https://github.com/llvm/llvm-project/tree/main/llvm/include
+
 <a href="https://www.packtpub.com/product/learn-llvm-17-second-edition/9781837631346?utm_source=github&utm_medium=repository&utm_campaign=9781837631346"><img src="https://m.media-amazon.com/images/I/71JS1fL+SkL._SL1500_.jpg" alt="Learn LLVM 17" height="256px" align="right"></a>
 
 This is the code repository for [Learn LLVM 17](https://www.packtpub.com/product/learn-llvm-17-second-edition/9781837631346?utm_source=github&utm_medium=repository&utm_campaign=9781837631346), published by Packt.
